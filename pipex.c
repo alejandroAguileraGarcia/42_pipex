@@ -6,7 +6,7 @@
 /*   By: aaguiler <aaguiler@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 18:14:16 by aaguiler          #+#    #+#             */
-/*   Updated: 2022/05/25 18:31:42 by aaguiler         ###   ########.fr       */
+/*   Updated: 2022/05/25 20:04:26 by aaguiler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	child_process(int *fd, char **argv, char **envp)
 		perror("Pipex: command not found");
 		ft_free_paths(args_execve);
 		free(path);
-		exit(0);
+		exit(EXIT_FAILURE);
 	}
 }
 
@@ -58,7 +58,7 @@ void	parent_process(int *fd, char **argv, char **envp)
 		perror("Pipex: command not found");
 		ft_free_paths(args_execve);
 		free(path);
-		exit(0);
+		exit(EXIT_FAILURE);
 	}
 }
 
@@ -92,10 +92,7 @@ void	pipex(char **argv, char **envp)
 int	main(int narg, char **args, char **envp)
 {
 	if (narg != 5)
-	{
-		perror("Pipex: invalid args");
-		return (0);
-	}
+		return (EXIT_FAILURE);
 	pipex(args, envp);
 	return (0);
 }

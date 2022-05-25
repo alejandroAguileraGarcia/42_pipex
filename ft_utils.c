@@ -6,7 +6,7 @@
 /*   By: aaguiler <aaguiler@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 18:14:49 by aaguiler          #+#    #+#             */
-/*   Updated: 2022/05/25 18:22:41 by aaguiler         ###   ########.fr       */
+/*   Updated: 2022/05/25 19:38:05 by aaguiler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_free_paths(char **paths)
 void	ft_check_fd(int fd)
 {
 	if (fd == -1)
-		perror("Pipex: no such file or directory");
+		perror("Pipex:");
 }
 
 char	**ft_get_all_paths(char **envp)
